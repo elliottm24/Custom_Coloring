@@ -14,8 +14,10 @@ public class ArtZone extends SurfaceView {
     Paint eyebrowPaint = new Paint();
     Paint hairPaint = new Paint();
     Paint mouthPaint = new Paint();
-    Paint blushPaint = new Paint;
+    Paint blushPaint = new Paint();
     private ArtData info;
+    int height;
+    int width;
 
     public ArtData getInfo() {
         return info;
@@ -46,13 +48,56 @@ public class ArtZone extends SurfaceView {
 
         setBackgroundColor(Color.WHITE);
 
-        public void drawEyes(Canvas canvas, float x, float y){
+        //public void drawEyes(Canvas canvas, float x, float y){
 
-        }
+        //}
+    }
 
-        @Override
-        public void onDraw(Canvas canvas){
+    @Override
+    public void onDraw(Canvas canvas){
+        height = canvas.getHeight();
+        width = canvas.getWidth();
 
-        }
+        drawHair(canvas);
+        drawFace(canvas);
+        drawEyebrows(canvas);
+        drawBlush(canvas);
+        drawEyes(canvas);
+        drawMouth(canvas);
+    }
+
+    public void drawEyes(Canvas canvas){
+        int centerH = height/2 + 300;
+        int centerW = width/2 + 300;
+
+        drawEye(canvas, centerH+50, centerW);
+        drawEye(canvas, centerH+50, centerW);
+    }
+
+    public void drawEye(Canvas canvas, int x, int y){
+        canvas.drawCircle(100.0f, 100.0f, 250.0f, eyePaint);
+    }
+
+    public void drawFace(Canvas canvas){
+        int centerH = height/2 + 300;
+        int centerW = width/2 + 300;
+
+        canvas.drawCircle(centerW, centerH, 250.0f, facePaint);
+    }
+
+    public void drawHair(Canvas canvas){
+        canvas.drawOval();
+    }
+
+    public void drawEyebrows(Canvas canvas){
+
+    }
+
+    public void drawMouth(Canvas canvas){
+
+    }
+
+    public void drawBlush(Canvas canvas){
+
     }
 }
