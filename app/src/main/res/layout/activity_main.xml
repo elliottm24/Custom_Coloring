@@ -11,8 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <SurfaceView
-            android:id="@+id/surfaceView2"
+        <com.example.custom_coloring.ArtZone
+            android:id="@+id/artzone"
             android:layout_width="match_parent"
             android:layout_height="453dp"
             android:layout_weight="5" />

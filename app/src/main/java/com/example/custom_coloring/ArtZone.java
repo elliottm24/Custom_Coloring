@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import android.view.SurfaceView;
 
 public class ArtZone extends SurfaceView {
@@ -14,23 +15,33 @@ public class ArtZone extends SurfaceView {
     Paint hairPaint = new Paint();
     Paint mouthPaint = new Paint();
     Paint blushPaint = new Paint;
+    private ArtData info;
 
-    public ArtZone(Context context) {
-        super(context);
+    public ArtData getInfo() {
+        return info;
+    }
+
+    public void setInfo(ArtData info) {
+        this.info = info;
+    }
+
+
+    public ArtZone(Context context, AttributeSet attrs) {
+        super(context, attrs);
 
         setWillNotDraw(false);
 
-        eyePaint.setColor();
+        eyePaint.setColor(info.eyeColor);
         eyePaint.setStyle(Paint.Style.FILL);
-        facePaint.setColor();
+        facePaint.setColor(info.faceColor);
         facePaint.setStyle(Paint.Style.FILL);
-        eyebrowPaint.setColor();
+        eyebrowPaint.setColor(info.eyebrowColor);
         eyebrowPaint.setStyle(Paint.Style.FILL);
-        hairPaint.setColor();
+        hairPaint.setColor(info.hairColor);
         hairPaint.setStyle(Paint.Style.FILL);
-        mouthPaint.setColor();
+        mouthPaint.setColor(info.mouthColor);
         mouthPaint.setStyle(Paint.Style.FILL);
-        blushPaint.setColor();
+        blushPaint.setColor(info.blushColor);
         blushPaint.setStyle(Paint.Style.FILL);
 
         setBackgroundColor(Color.WHITE);
