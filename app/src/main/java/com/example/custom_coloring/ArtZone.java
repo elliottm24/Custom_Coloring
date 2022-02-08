@@ -23,27 +23,25 @@ public class ArtZone extends SurfaceView {
         return info;
     }
 
-    public void setInfo(ArtData info) {
-        this.info = info;
-    }
-
-
     public ArtZone(Context context, AttributeSet attrs) {
         super(context, attrs);
 
+        info = new ArtData();
+
         setWillNotDraw(false);
 
-        eyePaint.setColor(info.eyeColor);
+        //storing colors in ArtData breaks the app???
+        eyePaint.setColor(Color.GREEN);
         eyePaint.setStyle(Paint.Style.FILL);
-        facePaint.setColor(info.faceColor);
+        facePaint.setColor(0xFFC755B5);
         facePaint.setStyle(Paint.Style.FILL);
-        eyebrowPaint.setColor(info.eyebrowColor);
+        eyebrowPaint.setColor(Color.BLACK);
         eyebrowPaint.setStyle(Paint.Style.FILL);
-        hairPaint.setColor(info.hairColor);
+        hairPaint.setColor(Color.BLACK);
         hairPaint.setStyle(Paint.Style.FILL);
-        mouthPaint.setColor(info.mouthColor);
+        mouthPaint.setColor(0xFFC755B5);
         mouthPaint.setStyle(Paint.Style.FILL);
-        blushPaint.setColor(info.blushColor);
+        blushPaint.setColor(Color.RED);
         blushPaint.setStyle(Paint.Style.FILL);
 
         setBackgroundColor(Color.WHITE);
@@ -68,36 +66,39 @@ public class ArtZone extends SurfaceView {
 
     public void drawEyes(Canvas canvas){
         int centerH = height/2 + 300;
-        int centerW = width/2 + 300;
+        int centerW = width/2 - 300;
 
         drawEye(canvas, centerH+50, centerW);
-        drawEye(canvas, centerH+50, centerW);
+        drawEye(canvas, centerH-50, centerW);
     }
 
     public void drawEye(Canvas canvas, int x, int y){
-        canvas.drawCircle(100.0f, 100.0f, 250.0f, eyePaint);
+        canvas.drawCircle(100.0f, 100.0f, 150.0f, eyePaint);
     }
 
     public void drawFace(Canvas canvas){
         int centerH = height/2 + 300;
-        int centerW = width/2 + 300;
+        int centerW = width/2 - 300;
 
-        canvas.drawCircle(centerW, centerH, 250.0f, facePaint);
+        canvas.drawCircle(centerW, centerH, 300.0f, facePaint);
     }
 
     public void drawHair(Canvas canvas){
-        canvas.drawOval();
+        int centerH = height/2 + 300;
+        int centerW = width/2 - 300;
+
+        canvas.drawOval(centerW, centerH, 250.0f, 150.0f, hairPaint);
     }
 
     public void drawEyebrows(Canvas canvas){
-
+        canvas.drawRect(100f, 100f, 100f, 100f, eyebrowPaint);
     }
 
     public void drawMouth(Canvas canvas){
-
+        canvas.drawRect(100f, 100f, 100f, 100f, mouthPaint);
     }
 
     public void drawBlush(Canvas canvas){
-
+        canvas.drawOval(100.0f, 100.0f, 250.0f, 150.0f, blushPaint);
     }
 }

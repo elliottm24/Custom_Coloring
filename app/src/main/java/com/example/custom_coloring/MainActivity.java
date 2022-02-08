@@ -1,6 +1,7 @@
 package com.example.custom_coloring;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.custom_coloring.R;
 
 import android.os.Bundle;
 import android.widget.SeekBar;

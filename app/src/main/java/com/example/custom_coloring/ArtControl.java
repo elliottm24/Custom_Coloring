@@ -1,6 +1,7 @@
 package com.example.custom_coloring;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.SeekBar;
@@ -33,14 +34,14 @@ public class ArtControl implements SeekBar.OnSeekBarChangeListener, View.OnTouch
 
         int color = Color.argb(255, red, green, blue);
 
-        switch (touched){
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-        }
+        //switch (info.touched){
+        //    case 0:
+        //    case 1:
+        //    case 2:
+        //    case 3:
+        //    case 4:
+        //    case 5:
+        //}
 
         picture.invalidate();
     }
@@ -57,6 +58,19 @@ public class ArtControl implements SeekBar.OnSeekBarChangeListener, View.OnTouch
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
+        /**
+         External Citation
+         Date: 7 February 2022
+         Problem: Couldn't figure out how to do the handling for the cooridnates
+         Resource:
+         https://www.youtube.com/watch?v=Yx63M4k-EeE
+         Solution: Turns out there's a thing that does that for you.
+         */
+        int x = (int)motionEvent.getX();
+        int y = (int)motionEvent.getY();
+
+        Log.d("touch","position: " + x + ", " + y);
+
         return false;
     }
 }
