@@ -2,11 +2,9 @@ package com.example.custom_coloring;
 
 public class ArtData {
     //sets initial colors for all pieces of the drawing
-    int eyeColor = 0xFFC755B5;
-    int faceColor = 0xFFC755B5;
-    int eyebrowColor = 0xFFC755B5;
-    int hairColor = 0xFFC755B5;
-    int mouthColor = 0xFFC755B5;
-    int blushColor = 0xFFC755B5;
-    int touched = 0;
+    int height = 0;
+    int width = 0;
+    int centerH = 0;
+    int centerW = 0;
+    String text = "Selected: ";
 }

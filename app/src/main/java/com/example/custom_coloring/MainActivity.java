@@ -5,6 +5,7 @@ import com.example.custom_coloring.R;
 
 import android.os.Bundle;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 // @author Maja Elliott
 
@@ -28,5 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         SeekBar blueC = (SeekBar) findViewById(R.id.seekBar3);
         blueC.setOnSeekBarChangeListener(controls);
+
+        picture.setOnTouchListener(controls);
     }
 }

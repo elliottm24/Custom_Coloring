@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class ArtControl implements SeekBar.OnSeekBarChangeListener, View.OnTouchListener{
 
@@ -34,15 +35,6 @@ public class ArtControl implements SeekBar.OnSeekBarChangeListener, View.OnTouch
 
         int color = Color.argb(255, red, green, blue);
 
-        //switch (info.touched){
-        //    case 0:
-        //    case 1:
-        //    case 2:
-        //    case 3:
-        //    case 4:
-        //    case 5:
-        //}
-
         picture.invalidate();
     }
 
@@ -70,6 +62,33 @@ public class ArtControl implements SeekBar.OnSeekBarChangeListener, View.OnTouch
         int y = (int)motionEvent.getY();
 
         Log.d("touch","position: " + x + ", " + y);
+
+        if ((388 <= x) && (x <= 685) && (781 <= y) && (y <= 758)){
+            //mouth
+            text.setText("Selected: Mouth");
+        }
+        else if (((605 <= x) && (x <= 711) && (611 <= y) && (y <= 708)) ||
+                ((367 <= x) && (x <= 470) && (611 <= y) && (y <= 708))){
+            //blush
+            text.setText("Selected: Blush");
+        }
+        else if ((( <= x) && (x <= ) && ( <= y) && (y <= )) ||
+                (( <= x) && (x <= ) && ( <= y) && (y <= ))){
+            //eyes
+            text.setText("Selected: Eyes");
+        }
+        else if ((426 <= x) && (x <= 646) && (532 <= y) && (y <= 552)){
+            //unibrow
+            text.setText("Selected: Eyebrow");
+        }
+        else if ((238 <= x) && (x <= 837) && (340 <= y) && (y <= 940)){
+            //face
+
+        }
+        else if ((188 <= x) && (x <= 885) && (332 <= y) && (y <= 1090)){
+            //hair
+
+        }
 
         return false;
     }
