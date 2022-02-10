@@ -45,10 +45,6 @@ public class ArtZone extends SurfaceView {
         blushPaint.setStyle(Paint.Style.FILL);
 
         setBackgroundColor(Color.WHITE);
-
-        //public void drawEyes(Canvas canvas, float x, float y){
-
-        //}
     }
 
     @Override

@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         picture = (ArtZone) findViewById(R.id.artzone);
-        controls = new ArtControl(picture);
+        TextView textView = (TextView) findViewById(R.id.textView2);
 
         SeekBar redC = (SeekBar) findViewById(R.id.seekBar);
         redC.setOnSeekBarChangeListener(controls);
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar blueC = (SeekBar) findViewById(R.id.seekBar3);
         blueC.setOnSeekBarChangeListener(controls);
 
+        controls = new ArtControl(picture, textView, redC, greenC, blueC);
         picture.setOnTouchListener(controls);
     }
 }
