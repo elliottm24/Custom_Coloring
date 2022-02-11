@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-// @author Maja Elliott
+/**
+*@author Maja Elliott
+ * Impliments seekbar and ontouch
+* */
 
 public class MainActivity extends AppCompatActivity {
     private ArtZone picture;

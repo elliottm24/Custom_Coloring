@@ -1,5 +1,9 @@
 package com.example.custom_coloring;
 
+/**
+ *@author Maja Elliott
+ * */
+
 public class ArtData {
     //sets initial colors for all pieces of the drawing
     int height = 0;

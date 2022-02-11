@@ -8,6 +8,11 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceView;
 
+/**
+ *@author Maja Elliott
+ * This is the file that compiles all the information that's put into the surface view.
+ * */
+
 public class ArtZone extends SurfaceView {
 
     //sets the paints for all the items
@@ -31,6 +36,7 @@ public class ArtZone extends SurfaceView {
 
         setWillNotDraw(false);
 
+        //initializing colors
         eyePaint.setColor(Color.GREEN);
         eyePaint.setStyle(Paint.Style.FILL);
         facePaint.setColor(Color.BLUE);
@@ -69,6 +75,7 @@ public class ArtZone extends SurfaceView {
     }
 
     public void drawEye(Canvas canvas, int x, int y){
+        //draws the individual eyes
         canvas.drawCircle(x, y, 25, eyePaint);
     }
 

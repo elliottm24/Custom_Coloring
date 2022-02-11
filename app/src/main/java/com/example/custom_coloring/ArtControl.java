@@ -11,8 +11,14 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+/**
+ *@author Maja Elliott
+ * Deals with the seekbar and touch handling
+ * */
+
 public class ArtControl implements SeekBar.OnSeekBarChangeListener, View.OnTouchListener{
 
+    //initializing the artzone and artdata objects
     private ArtZone picture;
     private ArtData info;
 
