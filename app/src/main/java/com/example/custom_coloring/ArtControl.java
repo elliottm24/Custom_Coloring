@@ -40,13 +40,16 @@ public class ArtControl implements SeekBar.OnSeekBarChangeListener, View.OnTouch
 
         switch (seekBar.getId()) {
             case R.id.seekBar:
-                red = seekBar.getProgress();
+                red = redC.getProgress();
+                Log.d("seekbar", "red = "+red);
                 break;
             case R.id.seekBar2:
-                green = seekBar.getProgress();
+                green = greenC.getProgress();
+                Log.d("seekbar", "green = "+green);
                 break;
             case R.id.seekBar3:
-                blue = seekBar.getProgress();
+                blue = blueC.getProgress();;
+                Log.d("seekbar", "blue = "+blue);
                 break;
         }
 
@@ -105,7 +108,7 @@ public class ArtControl implements SeekBar.OnSeekBarChangeListener, View.OnTouch
         int x = (int)motionEvent.getX();
         int y = (int)motionEvent.getY();
 
-        Log.d("touch","position: " + x + ", " + y);
+        //Log.d("touch","position: " + x + ", " + y);
 
 
         if (((605 <= x) && (x <= 711) && (611 <= y) && (y <= 708)) ||

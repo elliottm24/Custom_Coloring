@@ -51,7 +51,7 @@ public class ArtZone extends SurfaceView {
     public void onDraw(Canvas canvas){
         info.height = canvas.getHeight();
         info.width = canvas.getWidth();
-        Log.d("size","canvas size: "+info.width+"x"+info.height);
+        //Log.d("size","canvas size: "+info.width+"x"+info.height);
         info.centerH = info.height/2;
         info.centerW = info.width/2;
 
