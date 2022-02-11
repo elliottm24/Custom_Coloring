@@ -22,15 +22,15 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.textView2);
 
         SeekBar redC = (SeekBar) findViewById(R.id.seekBar);
-        redC.setOnSeekBarChangeListener(controls);
-
         SeekBar greenC = (SeekBar) findViewById(R.id.seekBar2);
-        greenC.setOnSeekBarChangeListener(controls);
-
         SeekBar blueC = (SeekBar) findViewById(R.id.seekBar3);
-        blueC.setOnSeekBarChangeListener(controls);
 
         controls = new ArtControl(picture, textView, redC, greenC, blueC);
+
+        redC.setOnSeekBarChangeListener(controls);
+        greenC.setOnSeekBarChangeListener(controls);
+        blueC.setOnSeekBarChangeListener(controls);
+
         picture.setOnTouchListener(controls);
     }
 }
